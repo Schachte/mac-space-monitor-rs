@@ -8,7 +8,7 @@ Heavily inspired by the great work of [George Christou](https://github.com/gechr
 
 Check usage in the [examples](./examples/) directory
 
-### Async listener
+### Async retrieval (event listener)
 
 ```rust
 use std::thread;
