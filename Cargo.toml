@@ -1,0 +1,24 @@
+[package]
+name = "space-monitor"
+version = "0.1.0"
+edition = "2021"
+authors = ["Ryan Schachte <spacemonitor@ryan-schachte.com>"]
+description = "A library for monitoring macOS virtual desktop (space) changes"
+license = "MIT"
+repository = "https://github.com/Schachte/mac-space-monitor-rs"
+keywords = ["macos", "desktop", "monitor", "spaces", "virtual-desktop"]
+categories = ["os::macos-apis"]
+
+[dependencies]
+cocoa = "0.24.1"
+core-foundation = "0.9.3"
+objc = "0.2.7"
+libc = "0.2.147"
+
+[lib]
+name = "macos_space_monitor"
+path = "src/lib.rs"
+
+[[example]]
+name = "monitor"
+path = "examples/monitor.rs"
