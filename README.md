@@ -67,7 +67,7 @@ This method relies on a few key ingredients:
   - Some message-passing invocations (`msg_send!`)
   - Used for receiving event notifications
 
-Space monitor is essentially a Rust binding to access lower-level mac OS internal APIs is an easy and efficient way.
+Space monitor is essentially a Rust binding to access lower-level mac OS internal APIs in an easy and efficient way.
 
 While you can occassionally deciper some esoteric plist files to derive the active screen via `defaults read com.apple.spaces SpacesDisplayConfiguration`, the contents are almost always incorrect and out of date, which makes it a non-starter for realtime change detection.
 
