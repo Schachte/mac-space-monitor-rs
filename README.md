@@ -1,8 +1,8 @@
 # 🚀 Space Monitor
 
-Space Monitor is a Rust API for subscribing to real-time changes on Mac OS X to obtain the current active [space](https://support.apple.com/guide/mac-help/work-in-multiple-spaces-mh14112/mac) (virtual desktop) index.
-
 ![Spaces Demo](./assets/pic.png)
+
+Space Monitor is a Rust API for subscribing to real-time changes on Mac OS X to obtain the current active [space](https://support.apple.com/guide/mac-help/work-in-multiple-spaces-mh14112/mac) (virtual desktop) index.
 
 Heavily inspired by the great work of [George Christou](https://github.com/gechr) and his Swift project - [WhichSpace](https://github.com/gechr/WhichSpace).
 
