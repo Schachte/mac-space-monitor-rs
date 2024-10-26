@@ -44,6 +44,23 @@ fn main() {
 }
 ```
 
+## Why?
+
+This library was motivated by a fun project I am working on that deals with managing spaces in a more custom way on Mac OS X for more efficient space navigation. One of the core requirements when building space/window management tooling is to understand _where_ you are within your display. This is a key crate I rely on to enable real-time lookups to map a virtual display ID to a space index.
+
+## Building
+
+If you don't know Rust or aren't using Rust and simply just want a binary you can invoke from your own code, you can build the example directly and embed the binary or add it to your `$PATH`.
+
+- Event Listener Version:
+
+  - Build: `cargo build --release --example monitor`
+  - Run: `./target/release/examples/monitor`
+
+- Adhoc Version:
+  - Build: `cargo build --release --example adhoc`
+  - Run: `./target/release/examples/adhoc`
+
 ## 🧠 How it works
 
 Surprisingly, obtaining the active virtual desktop index is a non-trivial task on Mac OS X and attempts in doing so have been breaking release after release as the method relies on undocumented Mac OS native APIs.
