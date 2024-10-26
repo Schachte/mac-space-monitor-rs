@@ -8,6 +8,40 @@ Heavily inspired by the great work of [George Christou](https://github.com/gechr
 
 Check usage in the [examples](./examples/) directory
 
+### Async listener
+
+```rust
+use std::thread;
+
+use macos_space_monitor::{MonitorEvent, SpaceMonitor};
+
+fn main() {
+    let (monitor, rx) = SpaceMonitor::new();
+    let _monitoring_thread = thread::spawn(move || {
+        while let Ok(event) = rx.recv() {
+            match event {
+                MonitorEvent::SpaceChange(space) => {
+                    println!("Space change detected! Active space is: {}", space);
+                }
+            }
+        }
+    });
+
+    monitor.start_listening();
+}
+```
+
+### Sync retrieval
+
+```rust
+use macos_space_monitor::SpaceMonitor;
+
+fn main() {
+    let space = SpaceMonitor::get_current_space_number();
+    println!("Current space: {}", space);
+}
+```
+
 ## How it works
 
 Surprisingly, obtaining the active virtual desktop index is a non-trivial task on Mac OS X and attempts in doing so have been breaking release after release as the method relies on undocumented Mac OS native APIs.
