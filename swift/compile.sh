@@ -1,0 +1,1 @@
+swiftc -o SpaceMonitor CurrentSpace-types.swift CurrentSpace-main.swift CurrentSpace-delegate.swift

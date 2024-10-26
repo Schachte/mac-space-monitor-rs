@@ -4,7 +4,7 @@ Space Monitor is a Rust API for subscribing to real-time changes on Mac OS X to 
 
 Heavily inspired by the great work of [George Christou](https://github.com/gechr) and his Swift project - [WhichSpace](https://github.com/gechr/WhichSpace).
 
-## Examples
+## 📚 Examples
 
 Check usage in the [examples](./examples/) directory
 
@@ -42,7 +42,7 @@ fn main() {
 }
 ```
 
-## How it works
+## 🧠 How it works
 
 Surprisingly, obtaining the active virtual desktop index is a non-trivial task on Mac OS X and attempts in doing so have been breaking release after release as the method relies on undocumented Mac OS native APIs.
 
@@ -71,6 +71,19 @@ Space monitor is essentially a Rust binding to access lower-level mac OS interna
 
 While you can occassionally deciper some esoteric plist files to derive the active screen via `defaults read com.apple.spaces SpacesDisplayConfiguration`, the contents are almost always incorrect and out of date, which makes it a non-starter for realtime change detection.
 
-## Warning
+## 🐦 Swift
+
+When I designed this crate, I wanted a minimal example I could iterate off of in Swift to simplify the migration into Rust since I'm not a Swift developer. Mostly just committing this for posterity, but you can find a much simpler implementation of this lib in Swift underneath the [./swift](./swift) directory. Once again, this is heavily inspired by [WhichSpace](https://github.com/gechr/WhichSpace), but wanted to remove all the boilerplate.
+
+You can compile it via either of the following:
+
+- [./swift/compile.sh](./swift/compile.sh)
+- `swiftc -o SpaceMonitor CurrentSpace-types.swift CurrentSpace-main.swift CurrentSpace-delegate.swift`
+
+Then just run:
+
+- `./SpaceMonitor`
+
+## ⚠️ Warning
 
 As this crate relies on private, undocumented native Mac OS APIs internally, I _believe_ your app would be rejected from the Apple app store if this crate is used within your application. However, users can still install the application externally.
